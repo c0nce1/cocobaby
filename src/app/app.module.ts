@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+//Manda a llamar al servicio
+import{HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +22,9 @@ import { ItemComponent } from './Pages/item/item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //Permite realizar peticiones Get,put  a servidores RES, servidores externos
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
