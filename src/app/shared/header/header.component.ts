@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 
 @Component({
@@ -8,6 +9,21 @@ import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 })
 export class HeaderComponent {
 
-constructor( public _info: InfoPaginaService){}
+constructor( public _info: InfoPaginaService
+  , private router:Router
+  ){}
+
+buscarProducto(termino : string){
+ 
+  if(termino.length < 1)
+  {
+    return;
+  }
+
+  this.router.navigate(['/busqueda',termino])
+
+
+
+}
 
 }
